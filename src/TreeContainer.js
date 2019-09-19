@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react'
+import TreeCard from './TreeCard'
 
 
 
@@ -30,15 +31,15 @@ export class TreeContainer extends Component {
   }
 
   handleHeartClick = (e) => {
-    console.log('hi');
+    console.log(e);
   }
 
   normalizeString = (string) => {
   let res
   let theString
 		if (string !== undefined) {
+      theString = string.replace(/[^a-zA-Z\d\s:]*/g, '')
   		if (string.includes(' ')){
-      theString = string.toLowerCase().replace(/\W/, '')
       let words = theString.split(' ')
       let result = []
       words.forEach((word) => {
@@ -46,12 +47,12 @@ export class TreeContainer extends Component {
       })
       res = result.join(' ')
       } else {
-       theString = string.toLowerCase().replace(/\W/, '')
        res = theString.charAt(0).toUpperCase() + theString.slice(1).toLowerCase()
       }
   	}
     return res
   }
+
 
   render(){
     const firstCenter = {lat: 40.703316, lng: -73.988145};
@@ -67,7 +68,7 @@ export class TreeContainer extends Component {
 
     return(
       <div>
-      <h1 style={{float: 'right'}}>All the Trees</h1>
+      <h1>All the Trees</h1>
       <Map
         google={this.props.google}
         zoom={14}
@@ -79,14 +80,13 @@ export class TreeContainer extends Component {
         <InfoWindow
         marker={this.state.treeMarker}
         visible={this.state.clicked}>
-        <div>
-        <h2>
-        {this.normalizeString(this.state.treeSelected.spc_common)} at {this.normalizeString(this.state.treeSelected.address)} {this.normalizeString(this.state.treeSelected.zip_city)}, NY {this.normalizeString(this.state.treeSelected.zipcode)}
-        </h2>
-        <img src={'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'} onClick={this.handleHeartClick}
-        alt=''/>
-        </div>
+          <div>
+          <h2>
+            {this.normalizeString(this.state.treeSelected.spc_common)} at {this.normalizeString(this.state.treeSelected.address)} {this.normalizeString(this.state.treeSelected.zip_city)}, NY {this.normalizeString(this.state.treeSelected.zipcode)}
+            </h2>
+          </div>
         </InfoWindow>
+        { this.state.clicked ? <TreeCard tree={this.state.treeSelected} normalizeString={this.normalizeString} addTreeToDB={this.props.addTreeToDB}/> : null }
       </Map>
       </div>
     )

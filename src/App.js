@@ -15,13 +15,13 @@ class App extends Component {
     stewardTrees: []
   }
 
-  // componentDidMount(){
-  //   if(localStorage.token){
-  //     this.getProfile()
-  //   } else {
-  //     this.props.history.push('/')
-  //   }
-  // }
+  componentDidMount(){
+    if(localStorage.token){
+      this.getProfile()
+    } else {
+      this.props.history.push('/')
+    }
+  }
 
   getProfile = () => {
   fetch('http://localhost:3000/profile',{
@@ -41,6 +41,26 @@ class App extends Component {
     this.props.history.push('/')
   }
 
+  addTreeToDB = (tree) => {
+    fetch('http://localhost:3000/trees', {
+      method:  'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        census_id: tree.tree_id,
+        health: tree.health,
+        steward: tree.steward
+      })
+      })
+      .then(res => res.json())
+      .then((data) => {
+        this.addSteward(data.id)
+        window.alert('saved for later')
+    })
+  }
+
   addSteward = (id) => {
     fetch('http://localhost:3000/stewards', {
       method: 'POST',
@@ -54,7 +74,6 @@ class App extends Component {
       })
     }).then(res => res.json())
     .then(() => {
-      window.alert('saved for later')
       this.getStewards(this.state.user_id)
       }
     )
@@ -73,7 +92,7 @@ class App extends Component {
   render(){
     return(
       <Switch>
-      <Route path={'/trees'} render={routerProps => <TreeContainer{...routerProps} getProfile={this.getProfile} handleLogOut={this.handleLogOut}/>} />
+      <Route path={'/trees'} render={routerProps => <TreeContainer{...routerProps} getProfile={this.getProfile} handleLogOut={this.handleLogOut} addTreeToDB={this.addTreeToDB}/>} />
       <Route path={'/login'} render={routerProps => <Login {...routerProps} getProfile={this.getProfile} />}/>
       <Route path={'/signup'} render={routerProps => <Signup {...routerProps} getProfile={this.getProfile} />}/>
 
