@@ -4,7 +4,7 @@ import LandingPage from './LandingPage'
 import TreeContainer from './TreeContainer'
 import Login from './Login'
 import Signup from './Signup'
-// import Profile from './Profile'
+import Profile from './Profile'
 import {Switch, Route, withRouter} from 'react-router-dom';
 
 class App extends Component {
@@ -41,6 +41,25 @@ class App extends Component {
     this.props.history.push('/')
   }
 
+  normalizeString = (str) => {
+  let res
+  let theString
+    if (str !== undefined && str !== null) {
+      theString = str.replace(/[^a-zA-Z\d\s:]*/g, '')
+      if (str.includes(' ')){
+      let words = theString.split(' ')
+      let result = []
+      words.forEach((word) => {
+        result.push( word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() )
+      })
+      res = result.join(' ')
+      } else {
+       res = theString.charAt(0).toUpperCase() + theString.slice(1).toLowerCase()
+      }
+    }
+    return res
+  }
+
   addTreeToDB = (tree) => {
     fetch('http://localhost:3000/trees', {
       method:  'POST',
@@ -50,6 +69,10 @@ class App extends Component {
       },
       body: JSON.stringify({
         census_id: tree.tree_id,
+        species: this.normalizeString(tree.spc_common),
+        address: this.normalizeString(tree.address),
+        boroname: tree.boroname,
+        zipcode: tree.zipcode,
         health: tree.health,
         steward: tree.steward
       })
@@ -72,11 +95,19 @@ class App extends Component {
         user_id: this.state.user_id,
         tree_id: id
       })
-    }).then(res => res.json())
+    })
+    .then(res => res.json())
     .then(() => {
       this.getStewards(this.state.user_id)
-      }
-    )
+      })
+  }
+
+  rmSteward = (id) => {
+    fetch(`http://localhost:3000/trees/${id}`, {
+      method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(this.getProfile())
   }
 
   getStewards = (id) => {
@@ -92,11 +123,36 @@ class App extends Component {
   render(){
     return(
       <Switch>
-      <Route path={'/trees'} render={routerProps => <TreeContainer{...routerProps} getProfile={this.getProfile} handleLogOut={this.handleLogOut} addTreeToDB={this.addTreeToDB}/>} />
-      <Route path={'/login'} render={routerProps => <Login {...routerProps} getProfile={this.getProfile} />}/>
-      <Route path={'/signup'} render={routerProps => <Signup {...routerProps} getProfile={this.getProfile} />}/>
 
-      <Route exact path={'/'} render={routerProps => <LandingPage {...routerProps} handleLogOut={this.handleLogOut}/>} />
+      <Route path={'/trees'}
+      render={routerProps => <TreeContainer{...routerProps}
+      getProfile={this.getProfile}
+      handleLogOut={this.handleLogOut}
+      addTreeToDB={this.addTreeToDB}
+      normalizeString={this.normalizeString}/>} />
+
+      <Route path={'/login'}
+      render={routerProps => <Login {...routerProps}
+      getProfile={this.getProfile} />}/>
+
+      <Route path={'/signup'}
+      render={routerProps => <Signup {...routerProps}
+      getProfile={this.getProfile} />}/>
+
+      <Route path={'/profile'}
+      render={routerProps => <Profile {...routerProps}
+      username={this.state.username}
+      getProfile={this.getProfile}
+      stewardTrees={this.state.stewardTrees}
+      normalizeString={this.normalizeString}
+      handleLogOut={this.handleLogOut}
+      rmSteward={this.rmSteward}/>} />
+
+      <Route exact path={'/'}
+      render={routerProps => <LandingPage {...routerProps}
+      user={this.state.username}
+      handleLogOut={this.handleLogOut}/>} />
+
       </Switch>
     )
   }
