@@ -4,7 +4,7 @@ export default class TreeDetail extends Component {
 
   render(){
 
-    const { normalizeString, tree, rmSteward } = this.props
+    const { normalizeString, tree, rmTreeFromDB } = this.props
     const { id, address, boroname, census_id, health, species, steward, zipcode } = tree;
 
     return(
@@ -13,7 +13,7 @@ export default class TreeDetail extends Component {
       <p><b>Location:</b> {normalizeString(address)} {normalizeString(boroname)}, NY {zipcode}</p>
       <p><b>Health:</b> {health}</p>
       <p><b>Steward:</b> {steward}</p>
-      <button onClick={ () => rmSteward(id) }>unluv</button>
+      <button onClick={ () => rmTreeFromDB(id) }>unluv</button>
       </div>
     )
   }

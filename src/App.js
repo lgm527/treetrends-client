@@ -97,17 +97,17 @@ class App extends Component {
       })
     })
     .then(res => res.json())
-    .then(() => {
-      this.getStewards(this.state.user_id)
-      })
+    .then(this.getProfile())
   }
 
-  rmSteward = (id) => {
+  rmTreeFromDB = (id) => {
+    let updatedTrees = this.state.stewardTrees.filter(tree => tree.id !== id)
+    this.setState({
+      stewardTrees: updatedTrees
+    })
     fetch(`http://localhost:3000/trees/${id}`, {
       method: 'DELETE'
     })
-    .then(res => res.json())
-    .then(this.getProfile())
   }
 
   getStewards = (id) => {
@@ -146,7 +146,7 @@ class App extends Component {
       stewardTrees={this.state.stewardTrees}
       normalizeString={this.normalizeString}
       handleLogOut={this.handleLogOut}
-      rmSteward={this.rmSteward}/>} />
+      rmTreeFromDB={this.rmTreeFromDB}/>} />
 
       <Route exact path={'/'}
       render={routerProps => <LandingPage {...routerProps}
