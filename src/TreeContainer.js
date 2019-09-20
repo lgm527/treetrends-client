@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react'
 import TreeCard from './TreeCard'
 import Nav from './Nav'
+import Search from './Search'
 
 
 
@@ -11,11 +12,16 @@ export class TreeContainer extends Component {
     trees: [],
     clicked: false,
     treeSelected: {},
-    treeMarker: {}
+    treeMarker: {},
+    neighborhood: 'DUMBO-Vinegar%20Hill-Downtown%20Brooklyn-Boerum%20Hill'
   }
 
   componentDidMount(){
-    fetch('https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=DUMBO-Vinegar%20Hill-Downtown%20Brooklyn-Boerum%20Hill&$limit=100',{
+    this.treeFetch()
+  }
+
+  treeFetch(){
+    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${this.state.neighborhood}&status=Alive&$limit=400`,{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -31,6 +37,11 @@ export class TreeContainer extends Component {
     this.setState({treeSelected: props.tree, treeMarker: marker, clicked: true})
   }
 
+  updateNeighborhood = (newN) => {
+    this.setState({neighborhood: newN})
+    this.treeFetch()
+  }
+
 
   render(){
     const firstCenter = {lat: 40.703316, lng: -73.988145};
@@ -44,13 +55,15 @@ export class TreeContainer extends Component {
           />
     })
 
-    const { normalizeString, addTreeToDB } = this.props
+    const { normalizeString, addTreeToDB, updateNeighborhood } = this.props
     const { spc_common, address, zip_city, zipcode } = this.state.treeSelected
+
 
     return(
       <div>
       <h1>All the Trees</h1>
       <div><Nav handleLogOut={this.props.handleLogOut} /></div>
+      <Search updateNeighborhood={this.updateNeighborhood} />
       <Map
         google={this.props.google}
         zoom={14}

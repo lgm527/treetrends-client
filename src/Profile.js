@@ -7,11 +7,8 @@ export default class Profile extends Component {
 
   render(){
 
-          console.log(this.props.stewardTrees);
-
     const { rmTreeFromDB, normalizeString } = this.props
     const stewTrees = this.props.stewardTrees.map((tree) => {
-      console.log(tree.id);
 
       return <TreeDetail tree={tree} normalizeString={normalizeString} rmTreeFromDB={rmTreeFromDB}  key={tree.id}/>
     })
