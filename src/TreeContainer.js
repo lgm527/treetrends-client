@@ -13,15 +13,16 @@ export class TreeContainer extends Component {
     clicked: false,
     treeSelected: {},
     treeMarker: {},
-    neighborhood: 'DUMBO-Vinegar%20Hill-Downtown%20Brooklyn-Boerum%20Hill'
+    neighborhood: 'DUMBO-Vinegar%20Hill-Downtown%20Brooklyn-Boerum%20Hill',
+    center: {lat: 40.703316, lng: -73.988145}
   }
 
   componentDidMount(){
-    this.treeFetch()
+    this.treeFetch(this.state.neighborhood)
   }
 
-  treeFetch(){
-    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${this.state.neighborhood}&status=Alive&$limit=400`,{
+  treeFetch(n){
+    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${n}&status=Alive&$limit=500`,{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +31,15 @@ export class TreeContainer extends Component {
       }
     })
     .then(res => res.json())
-    .then(trees => {this.setState({trees})})
+    .then(trees => {
+      this.setState({
+        trees: trees,
+        center: {
+          lat: trees[100].latitude,
+          lng: trees[100].longitude
+        }
+      })
+    })
   }
 
   handleClick = (props, marker, e) => {
@@ -39,7 +48,7 @@ export class TreeContainer extends Component {
 
   updateNeighborhood = (newN) => {
     this.setState({neighborhood: newN})
-    this.treeFetch()
+    this.treeFetch(newN)
   }
 
 
@@ -55,7 +64,7 @@ export class TreeContainer extends Component {
           />
     })
 
-    const { normalizeString, addTreeToDB, updateNeighborhood } = this.props
+    const { normalizeString, addTreeToDB } = this.props
     const { spc_common, address, zip_city, zipcode } = this.state.treeSelected
 
 
@@ -63,11 +72,11 @@ export class TreeContainer extends Component {
       <div>
       <h1>All the Trees</h1>
       <div><Nav handleLogOut={this.props.handleLogOut} /></div>
-      <Search updateNeighborhood={this.updateNeighborhood} />
+      <Search updateNeighborhood={this.updateNeighborhood}/>
       <Map
         google={this.props.google}
         zoom={14}
-        initialCenter={firstCenter}
+        center={this.state.center}
         style={{width: '500px', height: '500px'}}
         yesIWantToUseGoogleMapApiInternals={true}
         >
