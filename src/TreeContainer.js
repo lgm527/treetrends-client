@@ -22,7 +22,7 @@ export class TreeContainer extends Component {
   }
 
   treeFetch(n){
-    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${n}&status=Alive`,{
+    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${n}&status=Alive&steward=None`,{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -71,12 +71,13 @@ export class TreeContainer extends Component {
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.username}/></div>
+      <h1>Search by Neighborhood!</h1>
       <Search updateNeighborhood={this.updateNeighborhood}/>
       <Map
         google={this.props.google}
         zoom={14}
         center={this.state.center}
-        style={{width: '500px', height: '500px'}}
+        style={{width: '612px', height: '610px', margin: '1% 0 0 15%'}}
         yesIWantToUseGoogleMapApiInternals={true}
         >
         {theTrees}
@@ -89,7 +90,12 @@ export class TreeContainer extends Component {
             </h2>
           </div>
         </InfoWindow>
-        { this.state.clicked ? <TreeCard tree={this.state.treeSelected} normalizeString={normalizeString} addTreeToDB={addTreeToDB}/> : null }
+        { this.state.clicked ?
+          <TreeCard
+          tree={this.state.treeSelected}
+          normalizeString={normalizeString}
+          addTreeToDB={addTreeToDB}/>
+          : null }
       </Map>
       </div>
     )

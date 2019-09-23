@@ -39,7 +39,7 @@ export default class Signup extends React.Component {
   render () {
     return (
       <div className={form}>
-        <h1>Login</h1>
+        <h1>Signup</h1>
         <form onSubmit={this.handleSubmit}>
           <label> Username:
           <br></br>
@@ -53,7 +53,7 @@ export default class Signup extends React.Component {
           </label>
           <br></br>
           <br></br>
-          <input type='submit' value='Log In'/>
+          <input type='submit' value='Signup'/>
         </form>
         <a href='/'>
         <img style={{float: 'left', height: '30px', width: '30px'}} src={logo} alt='logo'/>

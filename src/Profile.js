@@ -16,7 +16,9 @@ export default class Profile extends Component {
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.username} /></div>
+      <div style={{textAlign: 'center', columnCount: '2', margin: '3%', overflow: 'auto'}}>
       {stewTrees}
+      </div>
       </div>
     )
   }

@@ -213,10 +213,10 @@ export default class Search extends React.Component {
 
   render(){
     return(
-      <div>Search by Neighborhood!
+      <div style={{marginLeft: '15.3%'}}>
       <Select options={listOptions}
       onChange={(value) => this.handleChange(value)}
-      style={{width: '600px', backgroundColor: 'white'}} />
+      style={{width: '600px', backgroundColor: 'white', textAlign: 'left'}} />
       </div>
 
     )
