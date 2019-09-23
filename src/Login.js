@@ -1,5 +1,6 @@
 import React from 'react'
-// import {form} from './Form.module.scss'
+import {form} from './Form.module.scss'
+import logo from './logo.png'
 
 export default class Login extends React.Component {
 
@@ -35,7 +36,7 @@ export default class Login extends React.Component {
   }
   render () {
     return (
-      <div className='form'>
+      <div className={form}>
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
           <label> Username:
@@ -43,13 +44,18 @@ export default class Login extends React.Component {
           <input onChange={this.handleChange} value={this.state.username} type='text' name='username' />
           </label>
           <br></br>
+          <br></br>
           <label> Password:
           <br></br>
           <input onChange={this.handleChange} value={this.state.password} type='password' name='password' />
           </label>
           <br></br>
+          <br></br>
           <input type='submit' value='Log In'/>
         </form>
+        <a href='/'>
+        <img style={{float: 'left', height: '30px', width: '30px'}} src={logo} alt='logo'/>
+        </a>
       </div>
     )
   }
