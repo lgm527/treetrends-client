@@ -1,10 +1,6 @@
 import React from 'react'
 import Select from 'react-dropdown-select'
 
-function compare(a, b){
-  return a - b;
-}
-
 const list = [
 'Claremont-Bathgate',
 'Eastchester-Edenwald-Baychester',
@@ -219,9 +215,8 @@ export default class Search extends React.Component {
     return(
       <div>Search by Neighborhood!
       <Select options={listOptions}
-      // value={this.state.selectedOption}
       onChange={(value) => this.handleChange(value)}
-      style={{width: '600px'}} />
+      style={{width: '600px', backgroundColor: 'white'}} />
       </div>
 
     )

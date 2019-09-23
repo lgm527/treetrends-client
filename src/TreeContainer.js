@@ -22,7 +22,7 @@ export class TreeContainer extends Component {
   }
 
   treeFetch(n){
-    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${n}&status=Alive&$limit=500`,{
+    fetch(`https://data.cityofnewyork.us/resource/uvpi-gqnh.json?nta_name=${n}&status=Alive`,{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export class TreeContainer extends Component {
 
 
   render(){
-    const firstCenter = {lat: 40.703316, lng: -73.988145};
+
     const theTrees = this.state.trees.map((tree) => {
       return <Marker
             position={{lat: tree.latitude, lng: tree.longitude}}
@@ -70,8 +70,7 @@ export class TreeContainer extends Component {
 
     return(
       <div>
-      <h1>All the Trees</h1>
-      <div><Nav handleLogOut={this.props.handleLogOut} /></div>
+      <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.username}/></div>
       <Search updateNeighborhood={this.updateNeighborhood}/>
       <Map
         google={this.props.google}

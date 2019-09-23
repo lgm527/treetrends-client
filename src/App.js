@@ -129,6 +129,7 @@ class App extends Component {
       getProfile={this.getProfile}
       handleLogOut={this.handleLogOut}
       addTreeToDB={this.addTreeToDB}
+      username={this.state.username}
       normalizeString={this.normalizeString}/>} />
 
       <Route path={'/login'}

@@ -15,7 +15,7 @@ export default class Profile extends Component {
 
     return(
       <div>
-      <div><Nav handleLogOut={this.props.handleLogOut} /></div>
+      <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.username} /></div>
       {stewTrees}
       </div>
     )

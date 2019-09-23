@@ -7,7 +7,7 @@ export default class TreeCard extends Component {
     const { normalizeString, addTreeToDB, tree } = this.props
     const { health, steward, spc_common, address, zip_city, zipcode, status, spc_latin } = this.props.tree;
     return(
-      <div style={{float: 'right'}}>
+      <div style={{float: 'right', borderRadius: '.5em', backgroundColor: 'white'}}>
         <button style={{float: 'right'}} onClick={ () => addTreeToDB(tree) }>luv</button>
         <p><b>Species:</b> {normalizeString(spc_common)} <i>({normalizeString(spc_latin)})</i></p>
         <p><b>Location:</b> {normalizeString(address)} {normalizeString(zip_city)}, NY {normalizeString(zipcode)}
