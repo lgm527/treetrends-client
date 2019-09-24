@@ -12,6 +12,7 @@ export class TreeContainer extends Component {
     trees: [],
     clicked: false,
     treeSelected: {},
+    treeSelectedLuvd: false,
     treeMarker: {},
     neighborhood: 'DUMBO-Vinegar%20Hill-Downtown%20Brooklyn-Boerum%20Hill',
     center: {lat: 40.703316, lng: -73.988145}
@@ -35,8 +36,8 @@ export class TreeContainer extends Component {
       this.setState({
         trees: trees,
         center: {
-          lat: trees[100].latitude,
-          lng: trees[100].longitude
+          lat: trees[200].latitude,
+          lng: trees[200].longitude
         }
       })
     })
@@ -44,13 +45,21 @@ export class TreeContainer extends Component {
 
   handleClick = (props, marker, e) => {
     this.setState({treeSelected: props.tree, treeMarker: marker, clicked: true})
+    if(this.props.stewardTrees.some(t => t.census_id === Number(props.tree.tree_id))){
+      this.setState({treeSelectedLuvd: true})
+    } else {
+      this.setState({treeSelectedLuvd: false})
+    }
   }
 
   updateNeighborhood = (newN) => {
-    this.setState({neighborhood: newN})
+    this.setState({neighborhood: newN, clicked: false})
     this.treeFetch(newN)
   }
 
+  luvd = () => {
+    this.setState({treeSelectedLuvd: true})
+  }
 
   render(){
 
@@ -94,7 +103,9 @@ export class TreeContainer extends Component {
           <TreeCard
           tree={this.state.treeSelected}
           normalizeString={normalizeString}
-          addTreeToDB={addTreeToDB}/>
+          addTreeToDB={addTreeToDB}
+          luv={this.state.treeSelectedLuvd}
+          luvd={this.luvd}/>
           : null }
       </Map>
       </div>

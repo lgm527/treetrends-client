@@ -61,6 +61,7 @@ class App extends Component {
   }
 
   addTreeToDB = (tree) => {
+    if (!this.state.stewardTrees.some(t => t.census_id === Number(tree.tree_id))) {
     fetch('http://localhost:3000/trees', {
       method:  'POST',
       headers: {
@@ -81,7 +82,10 @@ class App extends Component {
       .then((data) => {
         this.addSteward(data.id)
         window.alert('saved for later')
-    })
+      })
+    } else {
+      window.alert('already saved for later')
+    }
   }
 
   addSteward = (id) => {
@@ -130,6 +134,7 @@ class App extends Component {
       handleLogOut={this.handleLogOut}
       addTreeToDB={this.addTreeToDB}
       username={this.state.username}
+      stewardTrees={this.state.stewardTrees}
       normalizeString={this.normalizeString}/>} />
 
       <Route path={'/login'}
