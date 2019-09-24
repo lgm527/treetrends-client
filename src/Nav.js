@@ -5,6 +5,7 @@ import mapicon from './mapicon.svg';
 import avatar from './avatar.png';
 import tree from './nyc_parks_department';
 import ttlogo from './treetrends.png';
+import dataicon from './dataicon.svg';
 
 export default class Nav extends React.Component {
 
@@ -28,6 +29,10 @@ export default class Nav extends React.Component {
           </Link>
           <Link to='/profile'>
           <img src={avatar} alt='avatar' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '15px'}} />
+          {' '}
+          </Link>
+          <Link to='/species'>
+          <img src={dataicon} alt='species' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '15px'}} />
           {' '}
           </Link>
           <a href='https://www.nycgovparks.org/reg/stewardship'>
