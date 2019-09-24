@@ -9,11 +9,11 @@ export default class TreeDetail extends Component {
 
     return(
       <div style={{margin: '1% 18% 1%', borderRadius: '15px 50px', backgroundColor: 'white', textAlign: 'left', padding: '1.5%', width: '450px', height: '225px', breakInside: 'avoid'}} census_id={census_id}>
+      <p style={{float: 'right', color: 'red'}} onClick={ () => rmTreeFromDB(id) }>♥</p>
       <p><b>Species:</b> {normalizeString(species)}</p>
       <p><b>Location:</b> {normalizeString(address)} {normalizeString(boroname)}, NY {zipcode}</p>
       <p><b>Health:</b> {health}</p>
       <p><b>Steward:</b> {steward}</p>
-      <button style={{float: 'right'}}onClick={ () => rmTreeFromDB(id) }>unluv</button>
       </div>
     )
   }

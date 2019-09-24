@@ -13,7 +13,10 @@ export default class Nav extends React.Component {
     return(
       <React.Fragment>
         <div style={{display: 'flex',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    backgroundColor: 'rgba(0, 0, 0, .1)',
+                    padding: '5px',
+                    borderRadius: '15px'
                   }}>
           <Link to='/'>
           <img src={logo} alt='logo' style={{height: '40px', width: '40px', margin: '15px 15px 0'}}/>

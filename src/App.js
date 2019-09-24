@@ -112,6 +112,7 @@ class App extends Component {
     fetch(`http://localhost:3000/trees/${id}`, {
       method: 'DELETE'
     })
+    window.alert('goodbye tree')
   }
 
   getStewards = (id) => {
