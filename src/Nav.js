@@ -19,23 +19,23 @@ export default class Nav extends React.Component {
                     borderRadius: '15px'
                   }}>
           <Link to='/'>
-          <img src={logo} alt='logo' style={{height: '40px', width: '40px', margin: '15px 15px 0'}}/>
+          <img src={logo} alt='logo' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '15px'}}/>
           {' '}
           </Link>
           <Link to='/trees'>
-          <img src={mapicon} alt='map' style={{height: '40px', width: '40px', margin: '15px 15px 0'}}/>
+          <img src={mapicon} alt='map' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '15px'}}/>
           {' '}
           </Link>
           <Link to='/profile'>
-          <img src={avatar} alt='avatar' style={{height: '40px', width: '40px', margin: '15px 15px 0'}} />
+          <img src={avatar} alt='avatar' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '15px'}} />
           {' '}
           </Link>
           <a href='https://www.nycgovparks.org/reg/stewardship'>
-          <img src={tree} alt='' style={{height: '40px', width: '40px', margin: '15px 15px 0'}} />
+          <img src={tree} alt='' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '15px'}} />
           {' '}
           </a>
-          <img src={ttlogo} alt='treetrends logo'/>
-          <p style={{float: 'right', margin: '30px 15px 0px'}}>{' '}Logged in as: <b>{this.props.username}{' '}</b>{' '}</p>
+          <img src={ttlogo} style={{paddingRight: '15px'}} alt='treetrends logo'/>
+          <p style={{float: 'right', margin: '30px 15px 0px', paddingRight: '15px'}}>{' '}Logged in as: <b>{this.props.username}{' '}</b>{' '}</p>
           <button style={{float: 'right', margin: '30px 15px 15px'}}
           onClick={this.props.handleLogOut}>Logout</button>
         </div>
