@@ -16,7 +16,7 @@ export default class LandingPage extends Component {
         {localStorage.token ?
           (<div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user}/></div>) :
           (<p style={{backgroundColor: 'rgba(0, 0, 0, .1)', padding: '5px', borderRadius: '15px'}}><Link to='/login'><img src={login} alt='login'/></Link><img src={ttlogo} style={{padding: '50px'}} alt='treetrends logo'/><Link to='/signup'><img src={signup} alt='signup'/></Link></p>)}
-          <div>
+          <div style={{marginTop: '80px'}}>
           <p>Locate trees near you to provide stewardship!</p>
           <p>Also browse data from the 2015 Street Tree Census</p>
           </div>

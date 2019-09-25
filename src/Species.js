@@ -24,26 +24,50 @@ export default class Species extends React.Component {
     .then(data => this.setState({data}))
   }
 
-  total = (t, n) => {
-    return t + n
+  fonter = (n) => {
+    return Math.ceil((Number(n)/683788) * 5000)
   }
 
-  fixFontSize = (n) => {
-    this.state.data.reduce(this.total)
+  fontSize = (n) => {
+    let size = this.fonter(n)
+    let fSize = 10;
+    if (size > 500) {
+      fSize = 400;
+    } else if (size > 400) {
+      fSize = 300;
+    } else if (size > 300) {
+      fSize = 200;
+    } else if (size > 200) {
+      fSize = 100;
+    } else if (size > 100) {
+      fSize = 75;
+    } else if (size > 75) {
+      fSize = 50;
+    } else if (size > 50) {
+      fSize = 30;
+    } else if (size > 40) {
+      fSize = 25;
+    } else if (size > 30) {
+      fSize = 20;
+    } else if (size > 20) {
+      fSize = 15;
+    }
+    return fSize;
   }
-
-
 
   render(){
 
     const theData = this.state.data.map((spc, i) => {
-      return <p style={{fontSize: Number(spc.count), textAlign: 'left'}} key={i}>{this.props.normalizeString(spc.spc_common)}</p>
+      return <p style={{fontSize: this.fontSize(spc.count), textAlign: 'left'}} key={i}>{this.props.normalizeString(spc.spc_common)}</p>
     })
+
 
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user} /></div>
+      <div style={{marginTop: '80px'}}>
       {theData}
+      </div>
       </div>
 
     )

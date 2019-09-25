@@ -80,6 +80,7 @@ export class TreeContainer extends Component {
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.username}/></div>
+      <div style={{marginTop: '80px'}}>
       <h1>Search by Neighborhood!</h1>
       <Search updateNeighborhood={this.updateNeighborhood}/>
       <Map
@@ -108,6 +109,7 @@ export class TreeContainer extends Component {
           luvd={this.luvd}/>
           : null }
       </Map>
+      </div>
       </div>
     )
   }
