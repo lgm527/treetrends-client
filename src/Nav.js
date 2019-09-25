@@ -48,8 +48,8 @@ export default class Nav extends React.Component {
           </a>
           <img src={ttlogo} style={{paddingRight: '15px'}} alt='treetrends logo'/>
           <p style={{float: 'right', margin: '30px 15px 0px', paddingRight: '15px'}}>{' '}Logged in as: <b>{this.props.username}{' '}</b>{' '}</p>
-          <button style={{float: 'right', margin: '30px 15px 15px'}}
-          onClick={this.props.handleLogOut}>Logout</button>
+          <p style={{float: 'right', margin: '20px 15px 15px', cursor: 'pointer', backgroundColor: 'rgba(0, 0, 0, .1)', borderRadius: '15px', padding: '5px'}}
+          onClick={this.props.handleLogOut}>Peace Out</p>
         </div>
       </React.Fragment>
     )

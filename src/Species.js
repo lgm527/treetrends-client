@@ -7,12 +7,12 @@ export default class Species extends React.Component {
     data: []
   }
 
-  //https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common&$order=count%20DESC
-  //https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common&$order=count%20ASC
-  //alphabetical
-
   componentDidMount(){
-    fetch('https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common', {
+    this.fetchTrees('https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common')
+  }
+
+  fetchTrees = (url) => {
+    fetch(url, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -55,19 +55,38 @@ export default class Species extends React.Component {
     return fSize;
   }
 
+  handleSort = (s) => {
+    let url = ''
+    if(s === 'asc'){
+      url =  'https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common&$order=count%20ASC'
+    } else if (s === 'desc') {
+      url = 'https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common&$order=count%20DESC'
+    } else if (s === 'abc') {
+      url = 'https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common'
+    }
+    this.fetchTrees(url)
+  }
+
   render(){
 
     const theData = this.state.data.map((spc, i) => {
-      return <p style={{fontSize: this.fontSize(spc.count), textAlign: 'left'}} key={i}>{this.props.normalizeString(spc.spc_common)}</p>
+      if (spc.spc_common !== undefined) {
+      return <p style={{fontSize: this.fontSize(spc.count), textAlign: 'center', margin: 0}} key={i}>{this.props.normalizeString(spc.spc_common)} ({Number(spc.count).toLocaleString()})</p>
+      }
     })
-
 
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user} /></div>
       <div style={{marginTop: '80px'}}>
+      <div style={{fontSize: '25px'}}>Order by:
+      <span onClick={ () => this.handleSort('asc')} style={{cursor: 'pointer'}}>⬆︎</span>
+      <span onClick={ () => this.handleSort('desc')} style={{cursor: 'pointer'}}>⬇︎</span>
+      <span onClick={ () => this.handleSort('abc')} style={{cursor: 'pointer'}}>𝐚𝐛𝐜</span></div>
+      <br></br>
       {theData}
       </div>
+      <br></br>
       </div>
 
     )
