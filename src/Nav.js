@@ -6,6 +6,7 @@ import avatar from './avatar.png';
 import tree from './nycparkslogo.png';
 import ttlogo from './treetrends.png';
 import dataicon from './data.png';
+import './Nav.css'
 
 export default class Nav extends React.Component {
 
@@ -13,43 +14,30 @@ export default class Nav extends React.Component {
 
     return(
       <React.Fragment>
-        <div style={{display: 'flex',
-                    justifyContent: 'center',
-                    backgroundColor: 'rgba(0, 0, 0, .1)',
-                    padding: '5px',
-                    borderRadius: '15px',
-                    top: 0,
-                    position: 'fixed',
-                    textAlign: 'center',
-                    width: '97.5%',
-                    marginTop: '10px',
-                    marginBottom: '10px',
-                    zIndex: '2'
-                  }}>
+        <div className='bigDiv'>
           <Link to='/'>
-          <img src={logo} alt='logo' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '25px'}}/>
+          <img src={logo} alt='logo' className='navicons'/>
           {' '}
           </Link>
           <Link to='/trees'>
-          <img src={mapicon} alt='map' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '25px'}}/>
+          <img src={mapicon} alt='map' className='navicons'/>
           {' '}
           </Link>
           <Link to='/profile'>
-          <img src={avatar} alt='avatar' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '25px'}} />
+          <img src={avatar} alt='avatar' className='navicons'/>
           {' '}
           </Link>
           <Link to='/species'>
-          <img src={dataicon} alt='species' style={{height: '40px', width: '40px', margin: '15px 15px 0', paddingRight: '25px'}} />
+          <img src={dataicon} alt='species' className='navicons'/>
           {' '}
           </Link>
           <a href='https://www.nycgovparks.org/reg/stewardship'>
-          <img src={tree} alt='' style={{height: '45px', width: '40px', margin: '15px 15px 0', paddingRight: '25px'}} />
+          <img src={tree} alt='' id='nycparkslogo' />
           {' '}
           </a>
-          <img src={ttlogo} style={{paddingRight: '15px'}} alt='treetrends logo'/>
-          <p style={{float: 'right', margin: '30px 15px 0px', paddingRight: '15px'}}>{' '}Logged in as: <b>{this.props.username}{' '}</b>{' '}</p>
-          <p style={{float: 'right', margin: '20px 15px 15px', cursor: 'pointer', backgroundColor: 'rgba(0, 0, 0, .1)', borderRadius: '15px', padding: '5px'}}
-          onClick={this.props.handleLogOut}>Peace Out</p>
+          <img src={ttlogo} id='treetrends' alt='treetrends logo'/>
+          <p id='loggedin'>{' '}Logged in as: <b>{this.props.username}{' '}</b>{' '}</p>
+          <p id='peaceout' onClick={this.props.handleLogOut}>Peace Out</p>
         </div>
       </React.Fragment>
     )

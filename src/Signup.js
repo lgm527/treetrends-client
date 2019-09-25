@@ -7,7 +7,8 @@ export default class Signup extends React.Component {
 
   state = {
     username: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   }
 
   handleChange = (e) => {
@@ -16,30 +17,35 @@ export default class Signup extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/users', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state)
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (!data.errors) {
-        localStorage.token = data.token
-        localStorage.username = data.user.username
-        localStorage.id = data.user.id
-        this.props.getProfile()
-        this.props.history.push('/')
-      }
-    })
+    const {  password, confirmPassword } = this.state
+    if (password  !== confirmPassword){
+      window.alert('Passwords don\'t match')
+    } else {
+      fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.errors) {
+          localStorage.token = data.token
+          localStorage.username = data.user.username
+          localStorage.id = data.user.id
+          this.props.getProfile()
+          this.props.history.push('/')
+        }
+      })
+    }
   }
 
   render () {
     return (
       <div className={form}>
-        <h1>Signup</h1>
+        <h1>Sign up</h1>
         <form onSubmit={this.handleSubmit}>
           <label> Username:
           <br></br>
@@ -53,7 +59,13 @@ export default class Signup extends React.Component {
           </label>
           <br></br>
           <br></br>
-          <input type='submit' value='Signup'/>
+          <label> Confirm Password:
+          <br></br>
+          <input onChange={this.handleChange} value={this.state.confirmPasswordpassword} type='password' name='confirmPassword' placeholder='Confirm Password'/>
+          </label>
+          <br></br>
+          <br></br>
+          <input type='submit' value='Sign up'/>
         </form>
         <a href='/'>
         <img style={{float: 'left', height: '30px', width: '30px'}} src={logo} alt='logo'/>
