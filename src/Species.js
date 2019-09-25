@@ -7,6 +7,10 @@ export default class Species extends React.Component {
     data: []
   }
 
+  //https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common&$order=count%20DESC
+  //https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common&$order=count%20ASC
+  //alphabetical
+
   componentDidMount(){
     fetch('https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*)&$group=spc_common', {
       method: 'GET',
@@ -20,9 +24,15 @@ export default class Species extends React.Component {
     .then(data => this.setState({data}))
   }
 
-  fixFontSize = (n) => {
-    //some math ratio stuff to convert the population size into font size
+  total = (t, n) => {
+    return t + n
   }
+
+  fixFontSize = (n) => {
+    this.state.data.reduce(this.total)
+  }
+
+
 
   render(){
 
