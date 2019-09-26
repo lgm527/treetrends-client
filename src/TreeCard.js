@@ -13,7 +13,7 @@ export default class TreeCard extends Component {
     const { health, steward, spc_common, address, zip_city, zipcode, status, spc_latin } = this.props.tree;
     return(
       <div style={{float: 'right', marginRight: '20%', borderRadius: '15px 50px', backgroundColor: 'white', textAlign: 'left', padding: '2%', width: '250px', height: '450px'}}>
-        <p style={{float: 'right', color: 'red', cursor: 'pointer'}} onClick={ () => this.luv(tree) }>{ this.props.luv ? '♥' : '♡'}</p>
+        <p style={{float: 'right', color: 'red', cursor: 'pointer', padding: '.5%'}} onClick={ () => this.luv(tree) }>{ this.props.luv ? '♥' : '♡'}</p>
         <p><b>Species:</b> {normalizeString(spc_common)} <i>({normalizeString(spc_latin)})</i></p>
         <p><b>Location:</b> {normalizeString(address)} {normalizeString(zip_city)}, NY {normalizeString(zipcode)}
         </p>

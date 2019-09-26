@@ -23,14 +23,14 @@ export default class LandingPage extends Component {
           </div>
 
           <div>
-            <div style={{marginLeft: '15%', marginTop: '3%', height: '400px', width: '400px', float: 'left', textAlign: 'left'}}>
-              <p><b style={{fontSize: '25px'}}>stewardship:</b> <i>noun</i>
+            <div style={{background: 'white', marginLeft: '15%', marginTop: '3%', height: '170px', width: '400px', float: 'left', textAlign: 'left', padding: '2%', borderRadius: '15px 50px'}}>
+              <p><b style={{fontSize: '25px'}}>stewardship</b> <i>noun</i>
               <br></br>
-              stew·​ard·​ship | \ ˈstü-ərd-ˌship  , ˈstyü-; ˈst(y)u̇rd-\
+              stew·​ard·​ship | \ ˈstü-ərd-ˌship  , ˈstyü-; ˈst(y)u̇rd- \
               <br></br>
               the responsible overseeing and protection of something considered worth caring for and preserving.</p>
             </div>
-            <div style={{marginRight: '15%', marginTop: '3%', height: '400px', width: '600px',  float: 'right'}}>
+            <div style={{marginRight: '15%', marginTop: '3%', marginBottom: '5%', height: '400px', width: '600px',  float: 'right'}}>
               <img src={speak} alt='speak' style={{height: '200px', width: '200px', float: 'left'}}/>
               <img src= {lorax} alt='lorax' style={{height: '400px', width: '400px', float: 'right'}}/>
             </div>

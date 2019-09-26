@@ -6,6 +6,7 @@ import avatar from './avatar.png';
 import tree from './nycparkslogo.png';
 import ttlogo from './treetrends.png';
 import dataicon from './data.png';
+import hearthands from './hearthands.png'
 import './Nav.css'
 
 export default class Nav extends React.Component {
@@ -25,6 +26,10 @@ export default class Nav extends React.Component {
           </Link>
           <Link to='/profile'>
           <img src={avatar} alt='avatar' className='navicons'/>
+          {' '}
+          </Link>
+          <Link to='/friends'>
+          <img src={hearthands} alt='hearthands' className='navicons'/>
           {' '}
           </Link>
           <Link to='/species'>
