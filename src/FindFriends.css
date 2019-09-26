@@ -1,0 +1,26 @@
+/* top | right | bottom | left */
+/* top | horizontal | bottom */
+
+.treeHuggers {
+  margin: 90px 0 3% 5%;
+  column-count: 2;
+  column-width: 50%;
+}
+
+.friend {
+  background-color: white;
+  margin: 3% 0 3%;
+  width: 70%;
+  padding: 1%;
+  border-radius: 15px 50px;
+  text-align: left;
+  break-inside: avoid-column;
+}
+
+h3 {
+  text-align: center;
+}
+
+#heart {
+  color: red;
+}

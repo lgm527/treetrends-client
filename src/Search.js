@@ -193,6 +193,7 @@ const list = [
 'Great Kills',
 'park-cemetery-etc-Staten Island'
 ].sort();
+
 const listOptions = (list.map((place) => {return {value: place, label: place}}))
 
 export default class Search extends React.Component {

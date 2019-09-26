@@ -75,14 +75,16 @@ export default class Species extends React.Component {
       }
     })
 
+    const clickStyle = {cursor: 'pointer'}
+
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user} /></div>
       <div style={{marginTop: '80px'}}>
       <div style={{fontSize: '25px'}}>Order by:
-      <span onClick={ () => this.handleSort('asc')} style={{cursor: 'pointer'}}>⬆︎</span>
-      <span onClick={ () => this.handleSort('desc')} style={{cursor: 'pointer'}}>⬇︎</span>
-      <span onClick={ () => this.handleSort('abc')} style={{cursor: 'pointer'}}>𝐚𝐛𝐜</span></div>
+      <span onClick={ () => this.handleSort('asc')} style={clickStyle}>⬆︎</span>
+      <span onClick={ () => this.handleSort('desc')} style={clickStyle}>⬇︎</span>
+      <span onClick={ () => this.handleSort('abc')} style={clickStyle}>𝐚𝐛𝐜</span></div>
       <br></br>
       {theData}
       </div>

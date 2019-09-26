@@ -7,6 +7,8 @@ export default class Profile extends Component {
 
   render(){
 
+    const luvTreesStyle = {textAlign: 'center', columnCount: '2', margin: '3%',  columnWidth: '455px', marginTop: '80px'}
+
     const { rmTreeFromDB, normalizeString } = this.props
     const stewTrees = this.props.stewardTrees.map((tree) => {
 
@@ -16,7 +18,7 @@ export default class Profile extends Component {
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.username} /></div>
-      <div style={{textAlign: 'center', columnCount: '2', margin: '3%',  columnWidth: '455px', marginTop: '80px'}}>
+      <div style={luvTreesStyle}>
       {stewTrees}
       </div>
       </div>

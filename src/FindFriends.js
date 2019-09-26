@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Nav from './Nav'
 import Friend from './Friend'
+import './FindFriends.css'
 
 export default class FindFriends extends Component {
 
@@ -20,7 +21,7 @@ export default class FindFriends extends Component {
     return(
       <div>
         <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user} /></div>
-        <div style={{marginTop: '90px', marginLeft: '3%', marginBottom: '3%'}}>
+        <div className='treeHuggers'>
           {treeHuggers}
         </div>
       </div>
