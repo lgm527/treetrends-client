@@ -40,7 +40,7 @@ export default class Login extends React.Component {
     return (
       <div className={form}>
         <h1>Login</h1>
-        <form onSubmit={this.handleSubmit} autocomplete="off" >
+        <form onSubmit={this.handleSubmit} autoComplete="off" >
           <br></br>
           <input onChange={this.handleChange} value={this.state.username} type='text' name='username' placeholder='Username' />
           <br></br>
