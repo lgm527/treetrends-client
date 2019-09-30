@@ -8,6 +8,7 @@ import ttlogo from './treetrends.png';
 import dataicon from './bar.svg';
 import hearthands from './hearthands.png'
 import health from './pulse.png'
+import light from './light.png'
 import './Nav.css'
 
 export default class Nav extends React.Component {
@@ -39,6 +40,10 @@ export default class Nav extends React.Component {
           </Link>
           <Link to='/health'>
           <img src={health} alt='health' className='navicons'/>
+          {' '}
+          </Link>
+          <Link to='/tips'>
+          <img src={light} alt='light bulb' className='navicons'/>
           {' '}
           </Link>
           <a href='https://www.nycgovparks.org/reg/stewardship'>
