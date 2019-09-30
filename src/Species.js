@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
+import './Species.css'
 
 export default class Species extends React.Component {
 
@@ -75,16 +76,15 @@ export default class Species extends React.Component {
       }
     })
 
-    const clickStyle = {cursor: 'pointer'}
-
     return(
       <div>
       <div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user} /></div>
-      <div style={{marginTop: '80px'}}>
-      <div style={{fontSize: '25px'}}>Order by:
-      <span onClick={ () => this.handleSort('asc')} style={clickStyle}>⬆︎</span>
-      <span onClick={ () => this.handleSort('desc')} style={clickStyle}>⬇︎</span>
-      <span onClick={ () => this.handleSort('abc')} style={clickStyle}>𝐚𝐛𝐜</span></div>
+      <div className='speciesDiv'>
+      <div className='header'><u>Species!</u> Order by:
+      <span onClick={ () => this.handleSort('asc')} className='clickerStyle'>⬆︎</span>
+      <span onClick={ () => this.handleSort('desc')} className='clickerStyle'>⬇︎</span>
+      <span onClick={ () => this.handleSort('abc')} className='clickerStyle'>𝐚𝐛𝐜</span>
+      </div>
       <br></br>
       {theData}
       </div>

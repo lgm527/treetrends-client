@@ -7,6 +7,7 @@ import Signup from './Signup'
 import Profile from './Profile'
 import Species from './Species'
 import FindFriends from './FindFriends'
+import Health from './Health'
 import {Switch, Route, withRouter} from 'react-router-dom';
 
 class App extends Component {
@@ -159,6 +160,12 @@ class App extends Component {
 
       <Route exact path={'/species'}
       render={routerProps => <Species {...routerProps}
+      user={this.state.username}
+      normalizeString={this.normalizeString}
+      handleLogOut={this.handleLogOut}/>} />
+
+      <Route exact path={'/health'}
+      render={routerProps => <Health {...routerProps}
       user={this.state.username}
       normalizeString={this.normalizeString}
       handleLogOut={this.handleLogOut}/>} />

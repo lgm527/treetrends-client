@@ -19,7 +19,8 @@ export default class LandingPage extends Component {
           (<p className='banner'><Link to='/login'><img src={login} alt='login'/></Link><img src={ttlogo} id='ttlogo' alt='treetrends logo'/><Link to='/signup'><img src={signup} alt='signup'/></Link></p>)}
 
           <div id='intro'>
-          <p>Locate trees near you to provide stewardship!</p>
+          <p>Locate trees near you to volunteer stewardship!</p>
+          <p>See what trees others love <span id='heart'>♥</span></p>
           <p>Also browse data from the 2015 Street Tree Census.</p>
           </div>
 

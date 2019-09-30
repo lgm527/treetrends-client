@@ -1,0 +1,19 @@
+.clickerStyle {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 15px;
+  padding: 7px;
+  margin: 5px;
+}
+
+.clickerStyle:hover {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.speciesDiv {
+  margin-top: 90px;
+}
+
+.header {
+  font-size: 25px;
+}

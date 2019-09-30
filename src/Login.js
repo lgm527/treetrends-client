@@ -1,5 +1,5 @@
 import React from 'react'
-import {form} from './Form.module.scss'
+import {form, logoo, button} from './Form.module.scss'
 import logo from './logo.png'
 
 export default class Login extends React.Component {
@@ -31,6 +31,8 @@ export default class Login extends React.Component {
         localStorage.id = data.user.id
         this.props.getProfile()
         this.props.history.push('/')
+      } else {
+        window.alert('Wrong information, please try again.')
       }
     })
   }
@@ -38,23 +40,18 @@ export default class Login extends React.Component {
     return (
       <div className={form}>
         <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label> Username:
+        <form onSubmit={this.handleSubmit} autocomplete="off" >
           <br></br>
           <input onChange={this.handleChange} value={this.state.username} type='text' name='username' placeholder='Username' />
-          </label>
           <br></br>
-          <br></br>
-          <label> Password:
           <br></br>
           <input onChange={this.handleChange} value={this.state.password} type='password' name='password' placeholder='Password' />
-          </label>
           <br></br>
           <br></br>
-          <input type='submit' value='Log In'/>
+          <input className={button} type='submit' value='Log In'/>
         </form>
         <a href='/'>
-        <img style={{float: 'left', height: '30px', width: '30px'}} src={logo} alt='logo'/>
+        <img className={logoo} src={logo} alt='logo'/>
         </a>
       </div>
     )

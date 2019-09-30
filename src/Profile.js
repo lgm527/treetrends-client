@@ -7,7 +7,7 @@ export default class Profile extends Component {
 
   render(){
 
-    const luvTreesStyle = {textAlign: 'center', columnCount: '2', margin: '3%',  columnWidth: '455px', marginTop: '80px'}
+    const luvTreesStyle = {textAlign: 'center', columnCount: '2', margin: '3%',  columnWidth: '455px', marginTop: '90px'}
 
     const { rmTreeFromDB, normalizeString } = this.props
     const stewTrees = this.props.stewardTrees.map((tree) => {
