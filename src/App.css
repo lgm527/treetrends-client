@@ -6,3 +6,8 @@ body {
   margin: 10px;
   text-align: center;
 }
+
+a, a:visited {
+  color: black;
+  text-decoration: underline;
+}
