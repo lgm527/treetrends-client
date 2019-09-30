@@ -39,9 +39,9 @@ export default class Species extends React.Component {
 
       <div className='healthDiv'>
       <div id='healthBanner'><u>Health!</u></div>
-        <p id='good' onClick={() => {handleClick('good')}}>{rGood ? '528,850 Trees / 77%' : 'Good'}</p>
-        <p id='fair' onClick={() => {handleClick('fair')}}>{rFair ? '96,504 Trees / 14%' : 'Fair'}</p>
-        <p id='poor' onClick={() => {handleClick('poor')}}>{rPoor ? '26,818 Trees / 4%' : 'Poor'}</p>
+        <p id='good' onClick={() => {handleClick('good')}}>{rGood ? '528,850 Trees (77%)' : 'Good'}</p>
+        <p id='fair' onClick={() => {handleClick('fair')}}>{rFair ? '96,504 Trees (14%)' : 'Fair'}</p>
+        <p id='poor' onClick={() => {handleClick('poor')}}>{rPoor ? '26,818 Trees (4%)' : 'Poor'}</p>
       </div>
 
       </div>

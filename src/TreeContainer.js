@@ -36,8 +36,8 @@ export class TreeContainer extends Component {
       this.setState({
         trees: trees,
         center: {
-          lat: trees[200].latitude,
-          lng: trees[200].longitude
+          lat: trees[100].latitude,
+          lng: trees[100].longitude
         }
       })
     })
@@ -76,6 +76,7 @@ export class TreeContainer extends Component {
     const { normalizeString, addTreeToDB } = this.props
     const { spc_common, address, zip_city, zipcode } = this.state.treeSelected
 
+    console.log(this.state);
 
     return(
       <div>
@@ -87,7 +88,7 @@ export class TreeContainer extends Component {
         google={this.props.google}
         zoom={14}
         center={this.state.center}
-        style={{width: '612px', height: '610px', margin: '1% 0 0 15%'}}
+        style={{width: '30%', height: '50%', margin: '1% 0 0 15%'}}
         yesIWantToUseGoogleMapApiInternals={true}
         >
         {theTrees}
@@ -95,7 +96,7 @@ export class TreeContainer extends Component {
         marker={this.state.treeMarker}
         visible={this.state.clicked}>
           <div>
-          <h2>
+          <h2 style={{fontFamily: 'Red Hat Text'}}>
             {normalizeString(spc_common)} at {normalizeString(address)} {normalizeString(zip_city)}, NY {normalizeString(zipcode)}
             </h2>
           </div>

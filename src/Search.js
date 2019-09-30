@@ -213,7 +213,7 @@ export default class Search extends React.Component {
       <div style={{marginLeft: '15.3%'}}>
       <Select options={listOptions}
       onChange={(value) => this.handleChange(value)}
-      style={{width: '600px', backgroundColor: 'white', textAlign: 'left'}} />
+      style={{width: '35%', height: '8px', backgroundColor: 'white', textAlign: 'left'}} />
       </div>
 
     )
