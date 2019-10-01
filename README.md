@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Blog
+
+https://medium.com/@lgm527/treetrends-752d93930ae5
+
 ## Available Scripts
 
 In the project directory, you can run:
