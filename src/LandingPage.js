@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import lorax from './thelorax.svg';
-import signup from './signup.png';
-import login from './login.png';
-import ttlogo from './treetrends.png'
-import speak from './speak.png'
+import lorax from './assets/thelorax.svg';
+import signup from './assets/signup.png';
+import login from './assets/login.png';
+import ttlogo from './assets/treetrends.png'
+import speak from './assets/speak.png'
 import {Link} from 'react-router-dom';
 import Nav from './Nav';
-import './LandingPage.css'
+import './styles/LandingPage.css'
 
 export default class LandingPage extends Component {
 

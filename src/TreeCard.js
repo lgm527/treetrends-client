@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './Tree.css'
+import './styles/Tree.css'
 
 export default class TreeCard extends Component {
 

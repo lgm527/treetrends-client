@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
-import './Tips.css'
+import './styles/Tips.css'
 
 export default class Tips extends React.Component {
 
@@ -20,7 +20,7 @@ export default class Tips extends React.Component {
         <div className='tip'><p><u>Plants:</u><br></br>When there’s barely any ground to garden, it’s natural to want to garden in a tree bed. Annuals, perennials, and bulbs can be beautiful additions to a tree bed, as long as you remember that the tree’s health comes first. Flowers let passersby know you are taking care of your street tree. Wilting flowers in the tree bed are also a good reminder to water; as you water the flowers, the tree will also get a drink.</p></div>
         <div className='tip'><p><u>Hints for Newly Planted Trees:</u><br></br>Immediately remove the burlap wrapped around the trunk and any tape or wire used to hold it in place. Left in place, the burlap could keep the trunk wet and cause rot, and tape or wire could girdle the tree. After a year, remove any guylines and stakes so the tree can grow and move freely, which improves tree strength.</p></div>
 
-        <p>Thank you to this <a href='https://www.bbg.org/gardening/article/street_tree_bed_care'>article</a> by the Brooklyn Botanical Garden for the great tips!</p>
+        <p>Thanks to this <a href='https://www.bbg.org/gardening/article/street_tree_bed_care'>article</a> by the Brooklyn Botanical Garden for the great tips!</p>
         <br></br>
         </div>
 

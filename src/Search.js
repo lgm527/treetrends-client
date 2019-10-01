@@ -1,5 +1,6 @@
 import React from 'react'
-import Select from 'react-dropdown-select'
+import Select from 'react-select'
+import './styles/Search.css'
 
 const list = [
 'Claremont-Bathgate',
@@ -198,6 +199,7 @@ const listOptions = (list.map((place) => {return {value: place, label: place}}))
 
 export default class Search extends React.Component {
 
+
   convertStringToNTACode = (ntaName) => {
     if (ntaName !== undefined && ntaName !== ''){
      return ntaName.replace(/[\s]/g, '%20')
@@ -205,15 +207,17 @@ export default class Search extends React.Component {
   }
 
   handleChange = (selectedOption) => {
-    this.props.updateNeighborhood(this.convertStringToNTACode(selectedOption[0].value))
+    this.props.updateNeighborhood(this.convertStringToNTACode(selectedOption.value))
   }
+
 
   render(){
     return(
-      <div style={{marginLeft: '15.3%'}}>
+      <div id='sDiv'>
       <Select options={listOptions}
-      onChange={(value) => this.handleChange(value)}
-      style={{width: '35%', backgroundColor: 'white', textAlign: 'left', verticalAlign: 'middle', fontSize: '20px'}} />
+      onChange={this.handleChange}
+      id='search'
+      />
       </div>
 
     )

@@ -1,8 +1,6 @@
-//https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=health,spc_common
-
 import React from 'react'
 import Nav from './Nav'
-import './Health.css'
+import './styles/Health.css'
 
 export default class Species extends React.Component {
 

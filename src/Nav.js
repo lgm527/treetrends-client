@@ -1,15 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from './logo.png';
-import mapicon from './mapicon.svg';
-import avatar from './avatar.png';
-import tree from './nycparkslogo.png';
-import ttlogo from './treetrends.png';
-import dataicon from './bar.svg';
-import hearthands from './hearthands.png'
-import health from './pulse.png'
-import light from './light.png'
-import './Nav.css'
+import logo from './assets/logo.png';
+import mapicon from './assets/mapicon.svg';
+import avatar from './assets/avatar.png';
+import tree from './assets/nycparkslogo.png';
+import ttlogo from './assets/treetrends.png';
+import dataicon from './assets/bar.svg';
+import hearthands from './assets/hearthands.png'
+import health from './assets/pulse.png'
+import light from './assets/light.png'
+import './styles/Nav.css'
 
 export default class Nav extends React.Component {
 

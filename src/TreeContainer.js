@@ -82,7 +82,7 @@ export class TreeContainer extends Component {
       <div style={{marginTop: '90px'}}>
       <h1>Search by Neighborhood!</h1>
       <Search updateNeighborhood={this.updateNeighborhood}/>
-      <Map
+      {<Map
         google={this.props.google}
         zoom={14}
         center={this.state.center}
@@ -107,7 +107,7 @@ export class TreeContainer extends Component {
           luv={this.state.treeSelectedLuvd}
           luvd={this.luvd}/>
           : null }
-      </Map>
+      </Map>}
       </div>
       </div>
     )

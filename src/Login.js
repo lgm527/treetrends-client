@@ -1,6 +1,6 @@
 import React from 'react'
-import {form, logoo, button} from './Form.module.scss'
-import logo from './logo.png'
+import {form, logoo, button} from './styles/Form.module.scss'
+import logo from './assets/logo.png'
 
 export default class Login extends React.Component {
 

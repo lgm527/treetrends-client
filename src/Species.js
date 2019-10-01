@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
-import './Species.css'
+import './styles/Species.css'
 
 export default class Species extends React.Component {
 

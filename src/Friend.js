@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './FindFriends.css'
+import './styles/FindFriends.css'
 
 
 export default class Friend extends Component {

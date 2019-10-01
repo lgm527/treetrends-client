@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Nav from './Nav'
 import Friend from './Friend'
-import './FindFriends.css'
+import './styles/FindFriends.css'
 
 export default class FindFriends extends Component {
 
