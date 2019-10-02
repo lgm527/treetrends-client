@@ -17,14 +17,29 @@ export default class LandingPage extends Component {
       <div className='landingpage'>
 
         {localStorage.token ?
-          (<div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user}/>
-            <Feed username={this.props.user} /></div>) :
-          (<p className='banner'><Link to='/login'><img src={login} alt='login'/></Link><img src={ttlogo} id='ttlogo' alt='treetrends logo'/><Link to='/signup'><img src={signup} alt='signup'/></Link></p>)}
+          (<>
+            <Nav handleLogOut={this.props.handleLogOut} username={this.props.user}/>
+            <Feed username={this.props.user} />
+            <div id='welcome'>
+              <p id='hi'>Welcome to TreeTrends <b>{this.props.user}</b>! <img id='tree' src='http://maps.google.com/mapfiles/ms/icons/tree.png' alt='tree' /></p>
+              <p> Locate trees in your neighborhood using the map,</p>
+              <p> save trees you love,</p>
+              <p> see what trees others have saved,</p>
+              <p> explore the data collected for the 2015 Street Tree Census,</p>
+              <p> get tips for how to take care of a tree,</p>
+              <p> and visit the NYC Parks website to offically register to volunteer!</p>
+            </div>
+          </>)
+            :
+          (<>
+            <p className='banner'><Link to='/login'><img src={login} alt='login'/></Link><img src={ttlogo} id='ttlogo' alt='treetrends logo'/><Link to='/signup'><img src={signup} alt='signup'/></Link></p>
+
 
           <div id='intro'>
-          <p>Locate trees near you to volunteer stewardship!</p>
-          <p>See what trees others love <span id='heart'>♥</span></p>
-          <p>Also browse data from the 2015 Street Tree Census.</p>
+            <p>Locate trees near you to volunteer stewardship!</p>
+            <p>See what trees others love <span id='heart'>♥</span></p>
+            <p>Get tips on taking care of trees.</p>
+            <p>Also browse data from the 2015 Street Tree Census.</p>
           </div>
 
           <div>
@@ -41,8 +56,8 @@ export default class LandingPage extends Component {
               <img src= {lorax} alt='lorax' id='lorax'/>
             </div>
           </div>
-
-
+          </>)
+        }
 
       </div>
     )
