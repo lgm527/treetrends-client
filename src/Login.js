@@ -32,7 +32,7 @@ export default class Login extends React.Component {
         this.props.getProfile()
         this.props.history.push('/')
       } else {
-        window.alert('Wrong information, please try again.')
+        window.alert('Wrong information, ¯\\_(ツ)_/¯ please try again.')
       }
     })
   }
