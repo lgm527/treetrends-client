@@ -6,7 +6,8 @@ import ttlogo from './assets/treetrends.png'
 import speak from './assets/speak.png'
 import {Link} from 'react-router-dom';
 import Nav from './Nav';
-import './styles/LandingPage.css'
+import Feed from './Feed';
+import './styles/LandingPage.css';
 
 export default class LandingPage extends Component {
 
@@ -14,8 +15,10 @@ export default class LandingPage extends Component {
 
     return(
       <div className='landingpage'>
+
         {localStorage.token ?
-          (<div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user}/></div>) :
+          (<div><Nav handleLogOut={this.props.handleLogOut} username={this.props.user}/>
+            <Feed username={this.props.user} /></div>) :
           (<p className='banner'><Link to='/login'><img src={login} alt='login'/></Link><img src={ttlogo} id='ttlogo' alt='treetrends logo'/><Link to='/signup'><img src={signup} alt='signup'/></Link></p>)}
 
           <div id='intro'>
@@ -32,11 +35,14 @@ export default class LandingPage extends Component {
               <br></br>
               the responsible overseeing and protection of something considered worth caring for and preserving.</p>
             </div>
+
             <div className='pic'>
               <img src={speak} alt='speak' id='speak'/>
               <img src= {lorax} alt='lorax' id='lorax'/>
             </div>
           </div>
+
+
 
       </div>
     )

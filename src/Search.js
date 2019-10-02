@@ -38,7 +38,6 @@ const list = [
 'West Concourse',
 'Crotona Park East',
 'Rikers Island',
-'park-cemetery-etc-Bronx',
 'Brooklyn Heights-Cobble Hill',
 'Sheepshead Bay-Gerritsen Beach-Manhattn Bch',
 'Brighton Beach',
@@ -89,7 +88,6 @@ const list = [
 'Starrett City',
 'Erasmus',
 'Rugby-Remsen Village',
-'park-cemetery-etc-Brooklyn',
 'Marble Hill-Inwood',
 'Central Harlem North-Polo Grounds',
 'Hamilton Heights',
@@ -117,7 +115,6 @@ const list = [
 'Washington Heights South',
 'Upper East Side-Carnegie Hill',
 'Stuyvesant Town-Cooper Village',
-'park-cemetery-etc-Manhattan',
 'South Jamaica',
 'Springfield Gardens North',
 'Springfield Gardens South-Brookville',
@@ -173,7 +170,6 @@ const list = [
 'Old Astoria',
 'Steinway',
 'Baisley Park',
-'park-cemetery-etc-Queens',
 'Annadale-Huguenot-Prince\'s Bay-Eltingville',
 'New Springville-Bloomfield-Travis',
 'Westerleigh',
@@ -191,8 +187,7 @@ const list = [
 'Stapleton-Rosebank',
 'New Dorp-Midland Beach',
 'Arden Heights',
-'Great Kills',
-'park-cemetery-etc-Staten Island'
+'Great Kills'
 ].sort();
 
 const listOptions = (list.map((place) => {return {value: place, label: place}}))
