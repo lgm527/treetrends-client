@@ -64,6 +64,7 @@
   font-style: italic;
 }
 
-#tree {
+.tree {
   float: right;
+  font-style: normal;
 }

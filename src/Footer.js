@@ -10,7 +10,7 @@ export default class Footer extends Component {
     return(
       <>
       <div style={divStyle}>
-      <p style={pStyle}>Special thanks to NYC Open Data, ©TreeTrends made by the nerdy tree hugger: <a href='https://github.com/lgm527'>@lgm527</a></p>
+      <p style={pStyle}>Special thanks to NYC Open Data, ©TreeTrends made by the nerdy tree hugger: <a href='https://github.com/lgm527'>@lgm527</a> <span id='heart'>♥</span></p>
       </div>
       </>
     )

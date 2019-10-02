@@ -4,6 +4,8 @@
   border-radius: 15px;
   padding: 7px;
   margin: 5px;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }
 
 .clickerStyle:hover {

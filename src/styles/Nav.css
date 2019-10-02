@@ -24,6 +24,8 @@
   background-color: rgba(0, 0, 0, .1);
   padding: 7px;
   border-radius: 15px;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }
 
 .navicons:hover {
@@ -37,6 +39,8 @@
   background-color: rgba(0, 0, 0, .1);
   padding: 7px;
   border-radius: 15px;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }
 
 #nycparkslogo:hover {
@@ -60,6 +64,8 @@
   border-radius: 15px;
   padding: 7px;
   height: 50%;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }
 
 #peaceout:hover {

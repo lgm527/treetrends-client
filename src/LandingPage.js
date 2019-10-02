@@ -21,7 +21,7 @@ export default class LandingPage extends Component {
             <Nav handleLogOut={this.props.handleLogOut} username={this.props.user}/>
             <Feed username={this.props.user} />
             <div id='welcome'>
-              <p id='hi'>Welcome to TreeTrends <b>{this.props.user}</b>! <img id='tree' src='http://maps.google.com/mapfiles/ms/icons/tree.png' alt='tree' /></p>
+              <p id='hi'>Welcome to TreeTrends <b>{this.props.user}</b>! <img className='tree' src='http://maps.google.com/mapfiles/ms/icons/tree.png' alt='tree' /></p>
               <p> Locate trees in your neighborhood using the map,</p>
               <p> save trees you love,</p>
               <p> see what trees others have saved,</p>

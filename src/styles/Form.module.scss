@@ -1,6 +1,6 @@
 .form {
   background-color: white;
-  margin: 10% 40% 10%;
+  margin: 8% 40%;
   padding: 3%;
   border-Radius: 15px 50px;
   font-family: 'Red Hat Text', sans-serif;
@@ -13,13 +13,14 @@ input {
   border-bottom-style: 5px solid gray;
   border-left-style: none;
   color: gray;
-  padding: 3%;
+  padding: 4%;
   font-family: 'Red Hat Text', sans-serif;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }
 
 input:focus {
   outline: none;
-  padding: 3%;
   font-family: 'Red Hat Text', sans-serif;
 }
 
@@ -28,7 +29,14 @@ input:focus {
   height: 30px;
   width: 30px;
   padding: 3%;
-  color: gray;
+  border-radius: 5px;
+  background: lightgray;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+.logoo:hover {
+  background: darkgray;
 }
 
 .button {
