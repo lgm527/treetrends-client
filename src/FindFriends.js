@@ -10,7 +10,7 @@ export default class FindFriends extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000/friends')
+    fetch('https://tree-trends.herokuapp.com/friends')
     .then(res => res.json())
     .then(friends => {this.setState({friends})})
   }

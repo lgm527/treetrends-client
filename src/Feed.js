@@ -7,7 +7,7 @@ export default class Feed extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000/stewards')
+    fetch('https://tree-trends.herokuapp.com/stewards')
     .then(res => res.json())
     .then(stewards => this.setState({stewards}))
   }

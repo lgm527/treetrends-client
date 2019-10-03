@@ -15,7 +15,7 @@ export default class Login extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/login', {
+    fetch('https://tree-trends.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
