@@ -1,0 +1,73 @@
+/* top | right | bottom | left */
+/* top | horizontal | bottom */
+
+
+.bigDiv {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .1);
+  padding: 5px;
+  border-radius: 15px;
+  top: 0;
+  position: fixed;
+  text-align: center;
+  width: 97.5%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  z-index: 2;
+}
+
+.navicons {
+  height: 40px;
+  width: 40px;
+  margin: 7px 15px 0;
+  background-color: rgba(0, 0, 0, .1);
+  padding: 7px;
+  border-radius: 15px;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+.navicons:hover {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+#nycparkslogo {
+  height: 45px;
+  width: 40px;
+  margin: 5px 15px 0;
+  background-color: rgba(0, 0, 0, .1);
+  padding: 7px;
+  border-radius: 15px;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+#nycparkslogo:hover {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+#treetrends {
+  height: 90%;
+}
+
+#loggedin {
+  float: right;
+  margin: 30px 15px 0px;
+}
+
+#peaceout {
+  float: right;
+  margin: 20px 15px 15px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 15px;
+  padding: 7px;
+  height: 50%;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+#peaceout:hover {
+  background-color: rgba(0, 0, 0, .3);
+}

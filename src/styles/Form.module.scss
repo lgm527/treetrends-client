@@ -1,0 +1,58 @@
+.form {
+  background-color: white;
+  margin: 8% 40%;
+  padding: 3%;
+  border-Radius: 15px 50px;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+input {
+  font-size: 20px;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: 5px solid gray;
+  border-left-style: none;
+  color: gray;
+  padding: 4%;
+  font-family: 'Red Hat Text', sans-serif;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+input:focus {
+  outline: none;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.logoo {
+  float: left;
+  height: 30px;
+  width: 30px;
+  padding: 3%;
+  border-radius: 5px;
+  background: lightgray;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+
+.logoo:hover {
+  background: darkgray;
+}
+
+.button {
+  font-family: 'Red Hat Text', sans-serif;
+  outline: none;
+  background: lightgray;
+  border-radius: 5px;
+  padding: 3%;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: darkgray;
+}
+
+.button:active {
+  color: black;
+  background: rgb(131,131,131);
+}

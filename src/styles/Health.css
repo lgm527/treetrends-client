@@ -1,0 +1,26 @@
+.healthDiv {
+  margin-top: 90px;
+}
+
+#healthBanner {
+  font-size: 25px;
+}
+
+#good {
+  font-size: 200px;
+  color: green;
+  cursor: pointer;
+  margin: 100px 0 50px;
+}
+
+#fair {
+  font-size: 44px;
+  color: yellow;
+  cursor: pointer;
+}
+
+#poor {
+  font-size: 13px;
+  color: red;
+  cursor: pointer;
+}

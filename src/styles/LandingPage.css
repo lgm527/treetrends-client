@@ -1,0 +1,70 @@
+/* top | right | bottom | left */
+
+.banner {
+  background-color: rgba(0, 0, 0, .1);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+#ttlogo {
+  padding: 50px;
+}
+
+#intro {
+  justify-content: center;
+}
+
+#definition {
+  background-color: white;
+  margin: 3% 0 0 10%;
+  height: 170px;
+  width: 400px;
+  float: left;
+  text-align: left;
+  padding: 2%;
+  border-radius: 15px 50px;
+}
+
+#stew {
+  font-size: 25px;
+}
+
+.pic {
+  margin: 3% 10% 5% 0;
+  height: 400px;
+  width: 600px;
+  float: right;
+}
+
+#speak {
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+#lorax {
+  height: 400px;
+  width: 400px;
+  float: right;
+}
+
+#welcome {
+  float: right;
+  margin-top: 130px;
+  margin-right: 10%;
+  text-align: left;
+  padding: 2%;
+  width: 30%;
+  background-color: white;
+  border-radius: 15px 50px;
+}
+
+#hi {
+  font-size: 25px;
+  font-style: italic;
+}
+
+.tree {
+  float: right;
+  font-style: normal;
+}

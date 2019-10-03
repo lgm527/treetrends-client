@@ -1,0 +1,13 @@
+body {
+  background-color: rgba(0, 173, 35, .6);
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+a, a:visited {
+  color: black;
+  text-decoration: underline;
+}

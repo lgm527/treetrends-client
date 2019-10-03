@@ -1,0 +1,14 @@
+.tipsDiv {
+  margin-top: 90px;
+}
+
+#tipBanner {
+  font-size: 25px;
+}
+
+.tip{
+  background-color: white;
+  margin: 1% 15%;
+  padding: 1%;
+  border-Radius: 15px 50px;
+}
