@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   getProfile = () => {
-  fetch('http://localhost:3000/profile',{
+  fetch('https://tree-trends.herokuapp.com/profile',{
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }
@@ -66,7 +66,7 @@ class App extends Component {
 
   addTreeToDB = (tree) => {
     if (!this.state.stewardTrees.some(t => t.census_id === Number(tree.tree_id))) {
-    fetch('http://localhost:3000/trees', {
+    fetch('https://tree-trends.herokuapp.com/trees', {
       method:  'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ class App extends Component {
   }
 
   addSteward = (id) => {
-    fetch('http://localhost:3000/stewards', {
+    fetch('https://tree-trends.herokuapp.com/stewards', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -113,14 +113,14 @@ class App extends Component {
     this.setState({
       stewardTrees: updatedTrees
     })
-    fetch(`http://localhost:3000/trees/${id}`, {
+    fetch(`https://tree-trends.herokuapp.com/trees/${id}`, {
       method: 'DELETE'
     })
     window.alert('goodbye tree')
   }
 
   getStewards = (id) => {
-    fetch(`http://localhost:3000/users/${id}`)
+    fetch(`https://tree-trends.herokuapp.com/users/${id}`)
     .then(res => res.json())
     .then(user => {
       this.setState({

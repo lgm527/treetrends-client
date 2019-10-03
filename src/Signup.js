@@ -21,7 +21,7 @@ export default class Signup extends React.Component {
     if (password  !== confirmPassword){
       window.alert('Passwords don\'t match')
     } else {
-      fetch('http://localhost:3000/users', {
+      fetch('https://tree-trends.herokuapp.com/users', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
